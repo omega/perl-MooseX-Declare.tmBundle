@@ -2,38 +2,94 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>fileTypes</key>
-	<array/>
-	<key>foldingStartMarker</key>
-	<string>/\*\*|\{\s*$</string>
-	<key>foldingStopMarker</key>
-	<string>\*\*/|^\s*\}</string>
 	<key>name</key>
 	<string>MooseX-Declare</string>
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.perl.moose.declare</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.class.perl.moose.declare</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>\b(if|while|for|return)\b</string>
+			<string>\b(namespace)\s+(\S+)\b</string>
 			<key>name</key>
-			<string>keyword.control.untitled</string>
+			<string>meta.namespace.perl.moose.declare</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double.untitled</string>
-			<key>patterns</key>
-			<array>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
 				<dict>
-					<key>match</key>
-					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.untitled</string>
+					<string>keyword.control.perl.moose.declare</string>
 				</dict>
-			</array>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.class.perl.moose.declare</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(role)\s+(\S+)\b</string>
+			<key>name</key>
+			<string>meta.role.perl.moose.declare</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.perl.moose.declare</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.class.perl.moose.declare</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(class)\s+(\S+)\b</string>
+			<key>name</key>
+			<string>meta.class.perl.moose.declare</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.method.perl.moose.declare</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.perl.moose.declare</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.method.perl.moose.declare</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b((?:multi\s+)?method)\s+([-a-zA-Z0-9_]+)\s*(\(.*\))?</string>
+			<key>name</key>
+			<string>meta.method.perl.moose.declare</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>source.perl.moose</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
